@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Software Engineer Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <span class="navbar-brand">My Portfolio</span>
+      <button id="toggleNav" class="navbar-toggle">
+        <span class="toggle-icon"></span>
+      </button>
+      <ul id="navLinks" class="navbar-links hidden">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <header class="header">
+    <div class="container">
+      <h1>Hi, I'm Sagar Reddy Annaji</h1>
+      <p>A Software Engineer with 3 years experience in MERN stack.</p>
+    </div>
+  </header>
+  
+  <main class="container">
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <p>A Proficient Masters Scholar with a 3-years of experience as a Software Engineer, Pursuing Full time developer roles. Programming is a passion I discovered in high school and it still drives me to this day to learn all that I can in this vast world of technology. Problem solving and great analytical skills have always been my strengths. Being very proficient at Python, Java, JavaScript, C and frameworks like Django, Tkinter, React etc. aids me in not only quickly prototyping & experimenting with any hobby projects of mine but also in building stable, scalable projects.</p>
+    </section>
+    
+    <section id="experience" class="section">
+      <h2>Experience</h2>
+      <div class="experience-item">
+        <h3>Software Engineer</h3>
+        <p>Aug 2019 - Aug 2022</p>
+        <p>Tietoevry Pune, India</p>
+        <ul>
+          <li>Achieved 30% growth for client projects by leveraging MERN stack expertise to deliver scalable web applications, improving client satisfaction and project success.</li>
+          <li>Led Agile implementation, resulting in a 20% improvement in project delivery times and 15% increase in team productivity, tracked via Jira metrics.</li>
+          <li>Developed CI/CD pipeline with Jenkins, Maven, and GitLab CI/CD, reducing deployment time by 40% for faster iterations.</li>
+          <li>Designed RESTful APIs using Node.js and Express, integrating MongoDB for 25% improved application performance.</li>
+          <li>Utilized Jira for project management, reducing project backlog by 20% and improving client satisfaction.</li>
+          <li>Enhanced application security with OAuth 2.0 authentication, ensuring compliance and data protection.</li>
+          <li>Collaborated on user-friendly interfaces with React.js, resulting in 30% increased user engagement.</li>
+        </ul>
+      </div>
+    </section>
+    
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <div class="project">
+        <h3>Umpire Review System</h3>
+        <p>Umpire Decision Review System using Mobile camera. A version of the technology used in cricket to assist the match officials in their decision-making that works only with one camera. Coded in Python using OpenCV and MATLAB.</p>
+      </div>
+      <div class="project">
+        <h3>Predicting Influence of Twitter Users</h3>
+        <p>A web application that uses an Open source data set to train a ML model with Gradient boosting algorithm to compare various factors and predict who is more influential in swaying followers’ opinions among a set of twitter users. Coded in Python using Lightgbm, Pandas, Django and other auxiliary libraries.</p>
+      </div>
+      <div class="project">
+        <h3>Cryptocurrency Trading bot</h3>
+        <p>A Crypto trading bot that pulls historic data from Kraken’s (A popular crypto trading platform) Rest API to use the Trend following strategy for predicting uptrends and downtrends in the market to buy or sell Crypto automatically. Coded in Python.</p>
+      </div>
+    </section>
+    
+    <section id="contact" class="section">
+      <h2>Contact Me</h2>
+      <div class="container">
+        <form id="contactForm" class="contact-form">
+          <div class="form-group">
+            <label for="name" class="text-gray-400">Your Name</label>
+            <input type="text" id="name" name="name" required class="input">
+          </div>
+          <div class="form-group">
+            <label for="email" class="text-gray-400">Your Email</label>
+            <input type="email" id="email" name="email" required class="input">
+          </div>
+          <div class="form-group">
+            <label for="message" class="text-gray-400">Message</label>
+            <textarea id="message" name="message" rows="4" required class="input"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+    </section>
+    
+    <script>
+      document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent default form submission
+        
+        // Get form data
+        var formData = new FormData(this);
+        
+        // Construct email body
+        var body = "Name: " + formData.get("name") + "\n";
+        body += "Email: " + formData.get("email") + "\n";
+        body += "Message: " + formData.get("message");
+        
+        // Construct email link
+        var subject = "Contact Form Submission";
+        var mailtoLink = "mailto:alksagarreddy@gmail.com" + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+        
+        // Open default email client with pre-filled data
+        window.location.href = mailtoLink;
+      });
+    </script>
+    
+    
+  </main>
+  
+  <footer class="footer">
+    <div class="container flex items-center justify-between">
+      <div>
+        <p>&copy; 2024 My Portfolio. All Rights Reserved.</p>
+      </div>
+      <div class="flex items-center">
+        <p class="mr-4">Email: alksagarreddy@gmail.com</p>
+        <p class="mr-4">Location: New Jersey, USA</p>
+        <a href="https://www.linkedin.com/in/sagar-reddy-annaji-153545196" target="_blank" rel="noopener noreferrer">
+          <img src="LinkedIn_Logo.png" alt="LinkedIn" class="w-6 h-6" height="20" width="90">
+        </a>
+      </div>
+    </div>
+  </footer>
+  
+
+  <script src="scripts.js"></script>
+</body>
+</html>
